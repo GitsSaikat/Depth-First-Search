@@ -2,7 +2,7 @@
 #include<conio.h>
 #include<stdlib.h>
 using namespace std;
-int cost[10][10],i,j,k,n,stk[10],top,v,visit[10],visited[10];
+int path[10][10],i,j,k,n,stk[10],top,v,visit[10],visited[10];
 int main()
 {
 
@@ -15,7 +15,7 @@ int main()
     for(k=1; k<=m; k++)
     {
         cin >>i>>j;
-        cost[i][j]=1;
+        path[i][j]=1;
     }
     cout <<"Enter initial vertex to traverse from:";
     cin >>v;
@@ -26,7 +26,7 @@ int main()
     for(k=1;k<n;k++)
     {
         for(j=n; j>=1; j--)
-            if(cost[v][j]!=0 && visited[j]!=1 && visit[j]!=1)
+            if(path[v][j]!=0 && visited[j]!=1 && visit[j]!=1)
             {
                 visit[j]=1;
                 stk[top]=j;
